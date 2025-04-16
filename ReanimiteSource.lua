@@ -360,7 +360,7 @@ local function ReanimationPermadeathCharacter()
 		task.wait(RespawnTime + GetPlayerPing())
 
 		Player.Character = Character
-		replicatesignal2(Humanoid, "ServerBreakJoints")
+		if replicatesignal2 then replicatesignal2(Humanoid, "ServerBreakJoints") else replicatesignal(Humanoid, "ServerBreakJoints") end
 		Player.Character = ReanimationCharacter	
 	end
 
