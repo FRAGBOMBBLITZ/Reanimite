@@ -178,7 +178,7 @@ local function CreateDummy()
 		end
 	end
 
-	local HumanoidDescription = Players:GetHumanoidDescriptionFromUserId(279075104) -- Player.UserId
+	local HumanoidDescription = Players:GetHumanoidDescriptionFromUserId(Player.UserId)
 	local ReanimationDummy = Players:CreateHumanoidModelFromDescription(HumanoidDescription, Enum.HumanoidRigType.R6)
 	SanitizeDummy(ReanimationDummy)
 
