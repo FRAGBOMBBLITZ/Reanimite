@@ -130,10 +130,9 @@ local function ReplicateAccessory(Part0: string | number | BasePart, Part1: Base
 		if not Part0Exists or not Part1Exists then ReplicationConnections[AccessoryKey]:Disconnect(); ReplicationConnections[AccessoryKey] = nil; pcall(function() warn("gone.",AccessoryHandle.Parent) end) return end
 
 		local RootPartVelocity = ReanimationCharacter.HumanoidRootPart.Velocity
-		local RoundedRootVelocity = Vector3.new(RoundTwo(RootPartVelocity.X), RoundTwo(RootPartVelocity.Y), RoundTwo(RootPartVelocity.Z))
-		local DirectionalVelocity = RoundedRootVelocity * math.clamp(ReanimationCharacter.Humanoid.WalkSpeed * 2, 16, 10000)
+		local DirectionalVelocity = RootPartVelocity * math.clamp(ReanimationCharacter.Humanoid.WalkSpeed * 2, 16, 10000)
 		
-		local LinearVelocity = Vector3.new(DirectionalVelocity.X, math.clamp(RoundedRootVelocity.Y * 8,30,1000) + math.sin(os.clock()), DirectionalVelocity.Z)
+		local LinearVelocity = Vector3.new(DirectionalVelocity.X, 27 + math.sin(os.clock()), DirectionalVelocity.Z)
 		local AngularVelocity = Part1.AssemblyAngularVelocity
 		
 		local AntisleepPosition = Vector3.zero
