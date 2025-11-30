@@ -303,7 +303,7 @@ local function ReanimationVisualization()
 end
 
 local function ReanimationRespawn()
-	replicatesignal(Player.ConnectDiedSignalBackend)
+	replicatesignal3(game.Players.LocalPlayer, "ConnectDiedSignalBackend")
 	if not IsStudio then workspace.FallenPartsDestroyHeight = -500 end
 
 	for _, Value in ReanimationCharacter:GetChildren() do
@@ -355,11 +355,11 @@ local function ReanimationPermadeathCharacter()
 			Camera.CFrame = CameraCFrame
 		end)
 
-		replicatesignal(Player.ConnectDiedSignalBackend)
+		replicatesignal3(Player, "ConnectDiedSignalBackend")
 		task.wait(RespawnTime + GetPlayerPing())
 
 		Player.Character = Character
-		if replicatesignal2 then replicatesignal2(Humanoid, "ServerBreakJoints") else replicatesignal(Humanoid.ServerBreakJoints) end
+		replicatesignal3(Humanoid, "ServerBreakJoints")
 		Player.Character = ReanimationCharacter	
 	end
 
