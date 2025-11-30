@@ -144,7 +144,7 @@ local function ReplicateAccessory(Part0: string | number | BasePart, Part1: Base
 		AccessoryHandle.AssemblyLinearVelocity = LinearVelocity
 		AccessoryHandle.AssemblyAngularVelocity = AngularVelocity
 
-		AccessoryHandle.CFrame = (Part1.CFrame * AccessoryTransform) + AntisleepPosition
+		AccessoryHandle.CFrame = (Part1.CFrame * AccessoryTransform) --+ AntisleepPosition
 	end)
 end
 
